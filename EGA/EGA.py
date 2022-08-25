@@ -15,7 +15,7 @@ class EGA():
         
     def df_to_matrix(self, data):
         scaler = StandardScaler()
-        self.cvm = np.cov(scaler.fit_transform(data))
+        self.cvm = np.cov(scaler.fit_transform(data.T))
     
     def to_glasso_cvm(self):
         alphaRange = 10.0 ** np.arange(-8,0) # 1e-7 to 1e-1 by order of magnitude
